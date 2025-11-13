@@ -87,3 +87,39 @@ body{margin:0;background:var(--bg);color:#e6e6e9;font-family:Inter, system-ui, "
   .logo-text{display:none}
   .hero-title{font-size:28px}
 }
+
+
+/* Menu hover enhancements: neon glow + lift */
+.nav-link {
+  transition: transform .22s cubic-bezier(.2,.9,.2,1), box-shadow .22s, color .18s;
+}
+.nav-link:hover {
+  transform: translateY(-4px);
+  color: #fff;
+  box-shadow: 0 8px 34px rgba(123,47,247,0.16), 0 0 18px rgba(123,47,247,0.08);
+  text-shadow: 0 6px 28px rgba(123,47,247,0.06);
+}
+
+/* Footer social icons */
+.socials {
+  display:flex; gap:10px; align-items:center;
+}
+.socials a {
+  display:inline-flex; align-items:center; justify-content:center;
+  width:40px; height:40px; border-radius:10px;
+  background:transparent; border:1px solid rgba(255,255,255,0.03);
+  transition: transform .22s, box-shadow .22s, background .22s;
+  color:var(--muted); text-decoration:none; font-weight:700;
+}
+.socials a:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 18px 60px rgba(123,47,247,0.14);
+  background: linear-gradient(90deg, rgba(123,47,247,0.12), rgba(0,119,255,0.06));
+  color: #fff;
+}
+
+/* Small icon SVG inside links */
+.socials a svg { width:18px; height:18px; display:block; fill: currentColor; }
+
+/* Accessibility focus for nav links */
+.nav-link:focus { outline: 3px solid rgba(123,47,247,0.14); outline-offset:3px; border-radius:6px; }
