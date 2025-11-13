@@ -3,66 +3,191 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>MaduDigital — Automação & Integrações</title>
-  <meta name="description" content="Madudigital — automações e integrações. Painel técnico disponível em n8n.madudigital.online."/>
-  <link rel="canonical" href="https://madudigital.online/">
-  <style>
-    :root{--bg:#0f1724;--card:#0b1220;--accent:#ff5a5f;--muted:#9aa4b2}
-    body{margin:0;font-family:Inter,system-ui,Arial;background:linear-gradient(180deg,var(--bg),#071021);color:#fff;min-height:100vh;display:flex;align-items:center;justify-content:center}
-    .card{max-width:900px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:40px;border-radius:12px;box-shadow:0 10px 30px rgba(2,6,23,0.7)}
-    h1{margin:0 0 10px;font-size:28px}
-    p{margin:0 0 18px;color:var(--muted)}
-    .links{display:flex;gap:12px;flex-wrap:wrap}
-    a.btn{display:inline-block;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:600}
-    a.primary{background:var(--accent);color:#fff}
-    a.ghost{border:1px solid rgba(255,255,255,0.06);color:#fff;background:transparent}
-    footer{margin-top:18px;color:var(--muted);font-size:13px}
-  </style>
+  <title>Madu Digital — Desenvolvimento Web e Soluções Digitais</title>
+  <meta name="description" content="Madu Digital: agência especializada em desenvolvimento web, landing pages e blogs. Construímos soluções que convertem com design, performance e SEO." />
+  <meta name="keywords" content="desenvolvimento web, agência digital, criação de sites, landing pages, SEO, design responsivo, Madu Digital" />
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Madu Digital",
+    "url": "https://www.madudigital.com",
+    "logo": "https://www.madudigital.com/assets/logo.png",
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "telephone": "+55-xx-xxxxx-xxxx",
+      "contactType": "customer service",
+      "areaServed": "BR"
+    }]
+  }
+  </script>
+  <meta name="theme-color" content="#070708"/>
 </head>
 <body>
-  <div class="card" role="main">
-    <h1>MaduDigital</h1>
-    <p>Plataforma de automações e integrações. Painel administrativo e webhooks disponíveis em um subdomínio seguro. Se você é administrador, acesse o painel abaixo.</p>
-    <div class="links">
-      <a class="btn primary" href="https://n8n.madudigital.online" target="_blank" rel="noopener">Abrir painel n8n</a>
-      <a class="btn ghost" href="mailto:contato@madudigital.online">Contato</a>
+  <header id="site-header" class="header">
+    <div class="container header-inner">
+      <div class="logo">
+        <img src="/assets/logo.png" alt="Madu Digital" class="logo-img">
+        <div class="logo-text">Madu Digital</div>
+      </div>
+      <nav class="nav">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#sobre" class="nav-link">Sobre</a>
+        <a href="#servicos" class="nav-link">Serviços</a>
+        <a href="#portfolio" class="nav-link">Portfólio</a>
+        <a href="#contato" class="nav-link cta">Contato</a>
+      </nav>
+      <button id="mobile-toggle" class="mobile-toggle" aria-label="Abrir menu">☰</button>
     </div>
-    <footer>© <span id="year"></span> MaduDigital • Todos os direitos reservados</footer>
-  </div>
-  <script>document.getElementById('year').innerText = new Date().getFullYear()</script>
-</body>
-</html>
-<!doctype html>
-<html lang="pt-BR">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>MaduDigital — Automação & Integrações</title>
-  <meta name="description" content="Madudigital — automações e integrações. Painel técnico disponível em n8n.madudigital.online."/>
-  <link rel="canonical" href="https://madudigital.online/">
-  <style>
-    :root{--bg:#0f1724;--card:#0b1220;--accent:#ff5a5f;--muted:#9aa4b2}
-    body{margin:0;font-family:Inter,system-ui,Arial;background:linear-gradient(180deg,var(--bg),#071021);color:#fff;min-height:100vh;display:flex;align-items:center;justify-content:center}
-    .card{max-width:900px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:40px;border-radius:12px;box-shadow:0 10px 30px rgba(2,6,23,0.7)}
-    h1{margin:0 0 10px;font-size:28px}
-    p{margin:0 0 18px;color:var(--muted)}
-    .links{display:flex;gap:12px;flex-wrap:wrap}
-    a.btn{display:inline-block;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:600}
-    a.primary{background:var(--accent);color:#fff}
-    a.ghost{border:1px solid rgba(255,255,255,0.06);color:#fff;background:transparent}
-    footer{margin-top:18px;color:var(--muted);font-size:13px}
-  </style>
-</head>
-<body>
-  <div class="card" role="main">
-    <h1>MaduDigital</h1>
-    <p>Plataforma de automações e integrações. Painel administrativo e webhooks disponíveis em um subdomínio seguro. Se você é administrador, acesse o painel abaixo.</p>
-    <div class="links">
-      <a class="btn primary" href="https://n8n.madudigital.online" target="_blank" rel="noopener">Abrir painel n8n</a>
-      <a class="btn ghost" href="mailto:contato@madudigital.online">Contato</a>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <h1 class="hero-title">
+          Impulsione seu negócio com um <span class="accent">site que converte</span>
+        </h1>
+        <p class="hero-sub">Transformamos sua ideia em presença digital: sites rápidos, seguros e otimizados para SEO, projetados para converter visitantes em clientes.</p>
+        <div class="hero-ctas">
+          <a href="#contato" class="btn btn-primary" id="cta-meeting">Marcar Reunião</a>
+          <a href="#portfolio" class="btn btn-ghost">Ver Portfólio</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="about">
+      <div class="container about-inner">
+        <div class="about-left">
+          <div class="badge logo-circle" title="Madu Digital">
+            <img src="/assets/logo.png" alt="Madu Digital logo" style="width:76px">
+          </div>
+        </div>
+        <div class="about-right">
+          <h2>Sobre a Madu Digital</h2>
+          <p>
+            A <strong>Madu Digital</strong> é uma agência full‑service especializada em desenvolvimento web, design e estratégia digital.
+            Entregamos soluções personalizadas que unem performance, acessibilidade e otimização SEO para ampliar a presença online de marcas.
+          </p>
+          <p>
+            Trabalhamos com tecnologias modernas, garantindo sites rápidos, compatíveis com dispositivos móveis e prontos para indexação pelos mecanismos de busca.
+            Cada projeto é orientado por métricas e boas práticas para maximizar conversões.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos" class="services">
+      <div class="container services-inner">
+        <h2 class="section-title">Serviços</h2>
+        <div class="cards">
+          <article class="card">
+            <div class="card-icon">🌐</div>
+            <h3>Criação de Sites</h3>
+            <p>Sites institucionais e e‑commerce com foco em performance, otimização para SEO e experiência do usuário.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">📈</div>
+            <h3>Landing Pages</h3>
+            <p>Páginas otimizadas para campanhas e geração de leads com design orientado à conversão.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">✍️</div>
+            <h3>Criação de Blogs</h3>
+            <p>Implementação de estratégias de conteúdo e SEO técnico para aumentar tráfego orgânico e autoridade.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+      <div class="container portfolio-inner">
+        <h2 class="section-title">Portfólio – Projetos que geram resultados</h2>
+        <div class="portfolio-grid">
+
+          <div class="portfolio-card" tabindex="0" data-title="Projeto 1" data-desc="Descrição do projeto 1">
+            <img src="/assets/portfolio1.jpg" alt="Projeto 1" class="pc-img">
+            <div class="pc-overlay"><h3>Projeto 1</h3></div>
+          </div>
+    
+          <div class="portfolio-card" tabindex="0" data-title="Projeto 2" data-desc="Descrição do projeto 2">
+            <img src="/assets/portfolio2.jpg" alt="Projeto 2" class="pc-img">
+            <div class="pc-overlay"><h3>Projeto 2</h3></div>
+          </div>
+    
+          <div class="portfolio-card" tabindex="0" data-title="Projeto 3" data-desc="Descrição do projeto 3">
+            <img src="/assets/portfolio3.jpg" alt="Projeto 3" class="pc-img">
+            <div class="pc-overlay"><h3>Projeto 3</h3></div>
+          </div>
+    
+          <div class="portfolio-card" tabindex="0" data-title="Projeto 4" data-desc="Descrição do projeto 4">
+            <img src="/assets/portfolio4.jpg" alt="Projeto 4" class="pc-img">
+            <div class="pc-overlay"><h3>Projeto 4</h3></div>
+          </div>
+    
+          <div class="portfolio-card" tabindex="0" data-title="Projeto 5" data-desc="Descrição do projeto 5">
+            <img src="/assets/portfolio5.jpg" alt="Projeto 5" class="pc-img">
+            <div class="pc-overlay"><h3>Projeto 5</h3></div>
+          </div>
+    
+          <div class="portfolio-card" tabindex="0" data-title="Projeto 6" data-desc="Descrição do projeto 6">
+            <img src="/assets/portfolio6.jpg" alt="Projeto 6" class="pc-img">
+            <div class="pc-overlay"><h3>Projeto 6</h3></div>
+          </div>
+    
+        </div>
+      </div>
+    </section>
+
+    <div id="modal" class="modal" aria-hidden="true">
+      <div class="modal-content">
+        <button id="modal-close" class="modal-close" aria-label="Fechar">✕</button>
+        <div id="modal-body"></div>
+      </div>
     </div>
-    <footer>© <span id="year"></span> MaduDigital • Todos os direitos reservados</footer>
-  </div>
-  <script>document.getElementById('year').innerText = new Date().getFullYear()</script>
+
+    <section id="contato" class="contact">
+      <div class="container contact-inner">
+        <div class="contact-form">
+          <h2>Entre em Contato</h2>
+          <form id="form-contact" action="/api/contact" method="POST">
+            <label><span>Nome</span><input type="text" name="nome" required placeholder="Seu nome completo"></label>
+            <label><span>E-mail</span><input type="email" name="email" required placeholder="seu@exemplo.com"></label>
+            <label><span>WhatsApp</span><input type="text" name="whatsapp" required placeholder="(xx) xxxxx-xxxx"></label>
+            <label><span>Mensagem</span><textarea name="mensagem" rows="5" required placeholder="Como podemos ajudar?"></textarea></label>
+            <div class="form-actions"><button type="submit" class="btn btn-primary" id="send-btn">Enviar Mensagem</button></div>
+          </form>
+        </div>
+
+        <aside class="contact-info">
+          <h3>Informações</h3>
+          <p><strong>WhatsApp:</strong> (xx) xxxxx-xxxx</p>
+          <p><strong>E-mail:</strong> contato@madudigital.com</p>
+          <p><strong>Localização:</strong> Rua Fictícia, 123 - São Paulo, SP</p>
+          <div class="tech-lines" aria-hidden="true"></div>
+        </aside>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div class="logo-small">Madu Digital</div>
+        <div class="socials">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="LinkedIn">LI</a>
+          <a href="#" aria-label="Behance">BE</a>
+        </div>
+      </div>
+      <div class="footer-right">
+        <p>© 2025 Madu Digital – Todos os direitos reservados</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
 </body>
 </html>
