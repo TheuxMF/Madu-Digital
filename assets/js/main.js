@@ -1,90 +1,101 @@
 
-document.addEventListener('DOMContentLoaded', function(){
+// Basic helpers and animations (replacing framer-motion)
+function scrollTo(id){
+  const el = document.getElementById(id);
+  if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+}
 
-  // Mobile toggle
-  const mobileToggle = document.getElementById('mobile-toggle');
+function toggleMenu(){
   const nav = document.querySelector('.nav');
-  mobileToggle && mobileToggle.addEventListener('click', ()=> {
-    if(nav.style.display === 'flex'){ nav.style.display = 'none'; }
-    else{ nav.style.display = 'flex'; nav.style.flexDirection = 'column'; nav.style.gap = '10px'; nav.style.padding = '12px'; }
-  });
+  if(!nav) return;
+  nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+}
 
-  // Header scroll
-  const header = document.getElementById('site-header');
-  window.addEventListener('scroll', ()=> {
-    if(window.scrollY > 40){ header.style.backdropFilter = 'blur(8px)'; header.style.background = 'linear-gradient(180deg, rgba(6,6,9,0.6), rgba(6,6,9,0.25))'; }
-    else{ header.style.backdropFilter = 'blur(6px)'; header.style.background = 'linear-gradient(180deg, rgba(10,10,12,0.45), rgba(10,10,12,0.12))'; }
-  });
-
-  // Portfolio modal
-  const modal = document.getElementById('modal');
-  const modalBody = document.getElementById('modal-body');
-  const modalClose = document.getElementById('modal-close');
-
-  document.querySelectorAll('.portfolio-card').forEach(card=>{
-    card.addEventListener('click', ()=> openModal(card));
-    card.addEventListener('keypress', (e)=> { if(e.key === 'Enter') openModal(card); });
-  });
-
-  function openModal(card){
-    const title = card.dataset.title || 'Projeto';
-    const desc = card.dataset.desc || 'Descrição do projeto.';
-    modalBody.innerHTML = `
-      <div style="display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap">
-        <div style="flex:1;min-width:260px;height:220px;border-radius:10px;overflow:hidden;background:linear-gradient(120deg, rgba(91,18,255,0.12), rgba(0,119,255,0.06));display:flex;align-items:center;justify-content:center">
-          <strong style="font-size:18px;color:#5b12ff;">Preview</strong>
-        </div>
-        <div style="flex:1.6;min-width:260px">
-          <h3 style="margin-top:0">${title}</h3>
-          <p style="color:rgba(230,230,233,0.9)">${desc}</p>
-          <p style="color:rgba(230,230,233,0.75)">Tecnologias: HTML, CSS, JavaScript. Foco em performance, SEO e UX.</p>
-          <div style="margin-top:14px">
-            <a href="#" class="btn btn-primary" style="margin-right:8px">Ver Projeto</a>
-            <a href="#contato" class="btn btn-ghost">Solicitar Orçamento</a>
-          </div>
-        </div>
-      </div>
-    `;
-    modal.setAttribute('aria-hidden','false');
-  }
-
-  modalClose.addEventListener('click', ()=> modal.setAttribute('aria-hidden','true'));
-  modal.addEventListener('click', (e)=> { if(e.target === modal) modal.setAttribute('aria-hidden','true'); });
-
-  // Form submit (AJAX) to /api/contact
-  const form = document.getElementById('form-contact');
-  const sendBtn = document.getElementById('send-btn');
-  form && form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    sendBtn.textContent = 'Enviando...';
-    sendBtn.disabled = true;
-    const fd = new FormData(form);
-    const payload = Object.fromEntries(fd.entries());
-    try{
-      const res = await fetch(form.action, {
-        method: 'POST',
-        headers: {'Content-Type':'application/json'},
-        body: JSON.stringify(payload)
-      });
-      if(res.ok){
-        sendBtn.textContent = 'Mensagem Enviada';
-        form.reset();
-      } else {
-        const err = await res.json();
-        alert('Erro: ' + (err.message || 'Falha ao enviar'));
-      }
-    }catch(err){
-      alert('Erro ao enviar: ' + err.message);
-    }finally{
-      setTimeout(()=>{ sendBtn.textContent = 'Enviar Mensagem'; sendBtn.disabled = false; }, 1600);
+// IntersectionObserver reveal
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e => {
+    if(e.isIntersecting) {
+      e.target.classList.add('inview');
+      io.unobserve(e.target);
     }
   });
+},{threshold:0.12});
 
-  // simple inview fade using IntersectionObserver
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting) entry.target.classList.add('inview');
+document.querySelectorAll('[data-animate]').forEach(el => io.observe(el));
+
+// Floating elements/hero float subtle animation
+let floatEl = document.querySelector('.hero-float');
+if(floatEl){
+  floatEl.style.width = '140px';
+  floatEl.style.height = '140px';
+  floatEl.style.borderRadius = '50%';
+  floatEl.style.position = 'absolute';
+  floatEl.style.right = '6%';
+  floatEl.style.top = '20%';
+  floatEl.style.background = 'linear-gradient(90deg, rgba(168,85,247,0.18), rgba(59,130,246,0.18))';
+  floatEl.style.filter = 'blur(18px)';
+  floatEl.animate([{transform:'translateY(0px)'},{transform:'translateY(24px)'},{transform:'translateY(0px)'}],{duration:4500,iterations:Infinity});
+}
+
+// Simple form handler - default: show success message locally.
+// If you deploy Google Apps Script, replace FORM_ENDPOINT with the deployed URL
+const FORM_ENDPOINT = ''; // <-- paste your Google Apps Script POST URL here to enable real sending
+
+function handleForm(e){
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  const payload = {};
+  data.forEach((v,k) => payload[k]=v);
+  if(FORM_ENDPOINT){
+    // Attempt to send (CORS might block if not set in Apps Script)
+    fetch(FORM_ENDPOINT, {method:'POST',mode:'no-cors',body: JSON.stringify(payload)})
+      .then(()=>{ alert('Mensagem enviada! Obrigado.'); form.reset(); })
+      .catch(()=>{ alert('Erro ao enviar. Verifique o endpoint do Apps Script.'); });
+  } else {
+    // local friendly behavior
+    alert('Formulário não está configurado para envio. Para ativar, abra apps_script.txt e README e siga as instruções.');
+  }
+}
+
+// small CSS-in JS to animate elements when inview
+const style = document.createElement('style');
+style.innerHTML = `
+[data-animate].inview { transform: translateY(0); opacity:1; transition: all .7s cubic-bezier(.2,.9,.3,1); }
+[data-animate] { transform: translateY(24px); opacity:0; }
+`;
+document.head.appendChild(style);
+
+
+// dynamically assign generated portfolio images (if thumbs exist)
+(function assignPortfolioImages(){
+  const thumbs = document.querySelectorAll('.grid-3 .thumb');
+  if(!thumbs.length) return;
+  thumbs.forEach((t, i) => {
+    const idx = (i % 6) + 1;
+    t.style.backgroundImage = `url('assets/img/portfolio${idx}.png')`;
+    // add label and title if missing
+    if(!t.querySelector('.label')){
+      const lab = document.createElement('div'); lab.className='label'; lab.textContent = ['Loja Online','Landing Page','Blog','Website','Website','Landing Page'][i%6];
+      t.appendChild(lab);
+    }
+    if(!t.querySelector('.title')){
+      const title = document.createElement('div'); title.className='title'; title.textContent = ['E-commerce Premium','App Fitness Tech','Blog Corporativo','Portal Imobiliário','Restaurant Delivery','Startup SaaS'][i%6];
+      t.appendChild(title);
+    }
+  });
+})();
+
+
+// Smooth scroll fallback for browsers that ignore CSS smooth behavior
+document.querySelectorAll('a[href^="#"]').forEach(link=>{
+    link.addEventListener("click", function(e){
+        const targetID = this.getAttribute("href").substring(1);
+        const target = document.getElementById(targetID);
+        if(target){
+            e.preventDefault();
+            const top = target.getBoundingClientRect().top + window.scrollY - 40;
+            window.scrollTo({ top: top, behavior: "smooth" });
+        }
     });
-  }, {threshold:0.12});
-  document.querySelectorAll('section, .card, .portfolio-card').forEach(el=> io.observe(el));
 });

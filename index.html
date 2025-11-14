@@ -1,193 +1,275 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Madu Digital — Desenvolvimento Web e Soluções Digitais</title>
-  <meta name="description" content="Madu Digital: agência especializada em desenvolvimento web, landing pages e blogs. Construímos soluções que convertem com design, performance e SEO." />
-  <meta name="keywords" content="desenvolvimento web, agência digital, criação de sites, landing pages, SEO, design responsivo, Madu Digital" />
-  <link rel="stylesheet" href="/assets/css/styles.css">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Madu Digital",
-    "url": "https://www.madudigital.com",
-    "logo": "https://www.madudigital.com/assets/logo.png",
-    "contactPoint": [{
-      "@type": "ContactPoint",
-      "telephone": "+55-xx-xxxxx-xxxx",
-      "contactType": "customer service",
-      "areaServed": "BR"
-    }]
-  }
-  </script>
-  <meta name="theme-color" content="#070708"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Madu Digital — Agência Digital</title>
+  <meta name="description" content="Madu Digital — Criação de sites, landing pages, blogs e automações. Transformamos ideias em soluções digitais.">
+  <meta name="keywords" content="Madu Digital, criação de sites, landing page, SEO, automação, portfólio">
+  <meta name="author" content="Madu Digital">
+  <link rel="icon" href="assets/img/logo.png">
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <header id="site-header" class="header">
+  <header class="site-header">
     <div class="container header-inner">
-      <div class="logo">
-        <img src="/assets/logo.png" alt="Madu Digital" class="logo-img">
-        <div class="logo-text">Madu Digital</div>
+      <div class="brand" onclick="scrollTo('home')">
+        <img src="assets/img/logo.png" alt="Madu Digital" class="logo">
+        <span class="brand-name">Madu Digital</span>
       </div>
       <nav class="nav">
-        <a href="#home" class="nav-link">Home</a>
-        <a href="#sobre" class="nav-link">Sobre</a>
-        <a href="#servicos" class="nav-link">Serviços</a>
-        <a href="#portfolio" class="nav-link">Portfólio</a>
-        <a href="#contato" class="nav-link cta">Contato</a>
+        <a href="#home">Home</a>
+        <a href="#about">Sobre</a>
+        <a href="#services">Serviços</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#contact">Contato</a>
       </nav>
-      <button id="mobile-toggle" class="mobile-toggle" aria-label="Abrir menu">☰</button>
+      <button class="btn-hamb" aria-label="menu" onclick="toggleMenu()">☰</button>
     </div>
   </header>
 
   <main>
-    <section id="home" class="hero">
-      <div class="hero-overlay"></div>
-      <div class="container hero-content">
-        <h1 class="hero-title">
-          Impulsione seu negócio com um <span class="accent">site que converte</span>
-        </h1>
-        <p class="hero-sub">Transformamos sua ideia em presença digital: sites rápidos, seguros e otimizados para SEO, projetados para converter visitantes em clientes.</p>
-        <div class="hero-ctas">
-          <a href="#contato" class="btn btn-primary" id="cta-meeting">Marcar Reunião</a>
-          <a href="#portfolio" class="btn btn-ghost">Ver Portfólio</a>
-        </div>
-      </div>
-    </section>
+    
+<section id="home" class="hero" style="background-image: url('assets/img/hero-bg.png')">
+  <div class="hero-overlay"></div>
 
-    <section id="sobre" class="about">
-      <div class="container about-inner">
+  <div class="hero-content">
+    <h1>Impulsione seu negócio com a <span class="gradient-text">criação do seu próprio site</span></h1>
+    <p>Chegou a hora de digitalizar seu negócio. Desenvolvemos soluções modernas que convertem visitantes em clientes.</p>
+
+    <button class="btn-primary" onclick="slideScrollTo('contact')">Marcar Reunião →</button>
+  </div>
+</section>
+
+
+    
+    <section id="about" class="section about-section">
+      <div class="container about-inner" data-animate>
         <div class="about-left">
-          <div class="badge logo-circle" title="Madu Digital">
-            <img src="/assets/logo.png" alt="Madu Digital logo" style="width:76px">
-          </div>
+          <h2>Sobre a Empresa</h2>
+          <p><strong>Madu Digital</strong> é uma agência especializada em desenvolvimento web que transforma ideias em soluções digitais eficientes. Unimos tecnologia, design e estratégia para criar experiências digitais que fortalecem marcas e impulsionam negócios.</p>
+          <p>Nossa prioridade é entregar sites modernos, rápidos e otimizados, desenvolvidos com tecnologias atuais. Cada projeto é planejado de forma personalizada, priorizando inovação, alta performance e experiência do usuário.</p>
+          <p>Somos parceiros digitais para quem busca <a class="link-emph">evolução com qualidade, segurança e inovação</a>.</p>
         </div>
         <div class="about-right">
-          <h2>Sobre a Madu Digital</h2>
-          <p>
-            A <strong>Madu Digital</strong> é uma agência full‑service especializada em desenvolvimento web, design e estratégia digital.
-            Entregamos soluções personalizadas que unem performance, acessibilidade e otimização SEO para ampliar a presença online de marcas.
-          </p>
-          <p>
-            Trabalhamos com tecnologias modernas, garantindo sites rápidos, compatíveis com dispositivos móveis e prontos para indexação pelos mecanismos de busca.
-            Cada projeto é orientado por métricas e boas práticas para maximizar conversões.
-          </p>
+          <div class="logo-wrap" title="Madu Digital">
+            <img src="assets/img/logo.png" alt="Madu Digital" class="about-logo">
+            <div class="logo-glow" aria-hidden="true"></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="servicos" class="services">
-      <div class="container services-inner">
-        <h2 class="section-title">Serviços</h2>
-        <div class="cards">
-          <article class="card">
-            <div class="card-icon">🌐</div>
-            <h3>Criação de Sites</h3>
-            <p>Sites institucionais e e‑commerce com foco em performance, otimização para SEO e experiência do usuário.</p>
-          </article>
-          <article class="card">
-            <div class="card-icon">📈</div>
-            <h3>Landing Pages</h3>
-            <p>Páginas otimizadas para campanhas e geração de leads com design orientado à conversão.</p>
-          </article>
-          <article class="card">
-            <div class="card-icon">✍️</div>
-            <h3>Criação de Blogs</h3>
-            <p>Implementação de estratégias de conteúdo e SEO técnico para aumentar tráfego orgânico e autoridade.</p>
-          </article>
+
+    
+    <section id="services" class="section services-section">
+      <div class="container services-container" data-animate>
+        <h2 class="services-title">Nossos Serviços</h2>
+        <p class="services-subtitle">Soluções digitais completas para transformar sua presença online</p>
+
+        <div class="services-grid">
+
+          <div class="service-card" data-service>
+            <div class="service-icon icon-purple">🌐</div>
+            <div class="service-content">
+              <h3 class="service-title">Criação de Sites</h3>
+              <p class="service-desc">Sites profissionais, responsivos e otimizados para SEO. Desenvolvemos plataformas completas que representam sua marca com excelência e convertem visitantes em clientes.</p>
+            </div>
+            <div class="service-overlay"></div>
+            <span class="service-tag tag-purple">Criação de Sites</span>
+          </div>
+
+          <div class="service-card" data-service>
+            <div class="service-icon icon-blue">📄</div>
+            <div class="service-content">
+              <h3 class="service-title">Landing Pages</h3>
+              <p class="service-desc">Páginas de alta conversão focadas em resultados. Design estratégico e persuasivo para transformar tráfego em leads qualificados e aumentar suas vendas.</p>
+            </div>
+            <div class="service-overlay"></div>
+            <span class="service-tag tag-blue">Landing Pages</span>
+          </div>
+
+          <div class="service-card" data-service>
+            <div class="service-icon icon-pink">📝</div>
+            <div class="service-content">
+              <h3 class="service-title">Criação de Blogs</h3>
+              <p class="service-desc">Blogs modernos e funcionais para fortalecer sua presença digital. Plataforma completa para publicação de conteúdo, aumentando autoridade e alcance orgânico.</p>
+            </div>
+            <div class="service-overlay"></div>
+            <span class="service-tag tag-pink">Blogs</span>
+          </div>
+
+          <div class="service-card" data-service>
+            <div class="service-icon icon-purple">🤖</div>
+            <div class="service-content">
+              <h3 class="service-title">Agentes de IA</h3>
+              <p class="service-desc">Assistentes virtuais inteligentes que automatizam atendimento, qualificam leads e oferecem suporte 24/7. Tecnologia de ponta para revolucionar a interação com seus clientes.</p>
+            </div>
+            <div class="service-overlay"></div>
+            <span class="service-tag tag-purple">IA</span>
+          </div>
+
+          <div class="service-card" data-service>
+            <div class="service-icon icon-orange">⚡</div>
+            <div class="service-content">
+              <h3 class="service-title">Automação de Tarefas</h3>
+              <p class="service-desc">Soluções automatizadas que otimizam processos repetitivos, integram sistemas e aumentam a produtividade. Mais tempo para focar no que realmente importa no seu negócio.</p>
+            </div>
+            <div class="service-overlay"></div>
+            <span class="service-tag tag-orange">Automação</span>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <section id="portfolio" class="portfolio">
-      <div class="container portfolio-inner">
-        <h2 class="section-title">Portfólio – Projetos que geram resultados</h2>
-        <div class="portfolio-grid">
 
-          <div class="portfolio-card" tabindex="0" data-title="Projeto 1" data-desc="Descrição do projeto 1">
-            <img src="/assets/portfolio1.jpg" alt="Projeto 1" class="pc-img">
-            <div class="pc-overlay"><h3>Projeto 1</h3></div>
-          </div>
     
-          <div class="portfolio-card" tabindex="0" data-title="Projeto 2" data-desc="Descrição do projeto 2">
-            <img src="/assets/portfolio2.jpg" alt="Projeto 2" class="pc-img">
-            <div class="pc-overlay"><h3>Projeto 2</h3></div>
-          </div>
     
-          <div class="portfolio-card" tabindex="0" data-title="Projeto 3" data-desc="Descrição do projeto 3">
-            <img src="/assets/portfolio3.jpg" alt="Projeto 3" class="pc-img">
-            <div class="pc-overlay"><h3>Projeto 3</h3></div>
-          </div>
-    
-          <div class="portfolio-card" tabindex="0" data-title="Projeto 4" data-desc="Descrição do projeto 4">
-            <img src="/assets/portfolio4.jpg" alt="Projeto 4" class="pc-img">
-            <div class="pc-overlay"><h3>Projeto 4</h3></div>
-          </div>
-    
-          <div class="portfolio-card" tabindex="0" data-title="Projeto 5" data-desc="Descrição do projeto 5">
-            <img src="/assets/portfolio5.jpg" alt="Projeto 5" class="pc-img">
-            <div class="pc-overlay"><h3>Projeto 5</h3></div>
-          </div>
-    
-          <div class="portfolio-card" tabindex="0" data-title="Projeto 6" data-desc="Descrição do projeto 6">
-            <img src="/assets/portfolio6.jpg" alt="Projeto 6" class="pc-img">
-            <div class="pc-overlay"><h3>Projeto 6</h3></div>
-          </div>
-    
+<section id="portfolio" class="section portfolio-sec">
+  <div class="container" data-animate>
+    <h2 class="portfolio-title">Portfólio</h2>
+    <p class="portfolio-subtitle">Projetos que geram resultados</p>
+
+    <div class="portfolio-grid">
+
+      <div class="pf-card" data-pf>
+        <div class="pf-img" style="background-image:url('assets/img/portfolio1.png')"></div>
+        <div class="pf-base">
+          <span class="pf-tag">Loja Online</span>
+          <h3 class="pf-title">E-commerce Premium</h3>
+        </div>
+        <div class="pf-glass"></div>
+        <div class="pf-dup">
+          <span class="pf-tag-dup">Loja Online</span>
+          <h3 class="pf-title-dup">E-commerce Premium</h3>
         </div>
       </div>
-    </section>
 
-    <div id="modal" class="modal" aria-hidden="true">
-      <div class="modal-content">
-        <button id="modal-close" class="modal-close" aria-label="Fechar">✕</button>
-        <div id="modal-body"></div>
+      <div class="pf-card" data-pf>
+        <div class="pf-img" style="background-image:url('assets/img/portfolio2.png')"></div>
+        <div class="pf-base">
+          <span class="pf-tag">Landing Page</span>
+          <h3 class="pf-title">App Fitness Tech</h3>
+        </div>
+        <div class="pf-glass"></div>
+        <div class="pf-dup">
+          <span class="pf-tag-dup">Landing Page</span>
+          <h3 class="pf-title-dup">App Fitness Tech</h3>
+        </div>
       </div>
+
+      <div class="pf-card" data-pf>
+        <div class="pf-img" style="background-image:url('assets/img/portfolio3.png')"></div>
+        <div class="pf-base">
+          <span class="pf-tag">Blog</span>
+          <h3 class="pf-title">Blog Corporativo</h3>
+        </div>
+        <div class="pf-glass"></div>
+        <div class="pf-dup">
+          <span class="pf-tag-dup">Blog</span>
+          <h3 class="pf-title-dup">Blog Corporativo</h3>
+        </div>
+      </div>
+
+      <div class="pf-card" data-pf>
+        <div class="pf-img" style="background-image:url('assets/img/portfolio4.png')"></div>
+        <div class="pf-base">
+          <span class="pf-tag">Website</span>
+          <h3 class="pf-title">Portal Imobiliário</h3>
+        </div>
+        <div class="pf-glass"></div>
+        <div class="pf-dup">
+          <span class="pf-tag-dup">Website</span>
+          <h3 class="pf-title-dup">Portal Imobiliário</h3>
+        </div>
+      </div>
+
+      <div class="pf-card" data-pf>
+        <div class="pf-img" style="background-image:url('assets/img/portfolio5.png')"></div>
+        <div class="pf-base">
+          <span class="pf-tag">Website</span>
+          <h3 class="pf-title">Restaurant Delivery</h3>
+        </div>
+        <div class="pf-glass"></div>
+        <div class="pf-dup">
+          <span class="pf-tag-dup">Website</span>
+          <h3 class="pf-title-dup">Restaurant Delivery</h3>
+        </div>
+      </div>
+
+      <div class="pf-card" data-pf>
+        <div class="pf-img" style="background-image:url('assets/img/portfolio6.png')"></div>
+        <div class="pf-base">
+          <span class="pf-tag">Landing Page</span>
+          <h3 class="pf-title">Startup SaaS</h3>
+        </div>
+        <div class="pf-glass"></div>
+        <div class="pf-dup">
+          <span class="pf-tag-dup">Landing Page</span>
+          <h3 class="pf-title-dup">Startup SaaS</h3>
+        </div>
+      </div>
+
     </div>
+  </div>
+</section>
 
-    <section id="contato" class="contact">
-      <div class="container contact-inner">
-        <div class="contact-form">
-          <h2>Entre em Contato</h2>
-          <form id="form-contact" action="/api/contact" method="POST">
-            <label><span>Nome</span><input type="text" name="nome" required placeholder="Seu nome completo"></label>
-            <label><span>E-mail</span><input type="email" name="email" required placeholder="seu@exemplo.com"></label>
-            <label><span>WhatsApp</span><input type="text" name="whatsapp" required placeholder="(xx) xxxxx-xxxx"></label>
-            <label><span>Mensagem</span><textarea name="mensagem" rows="5" required placeholder="Como podemos ajudar?"></textarea></label>
-            <div class="form-actions"><button type="submit" class="btn btn-primary" id="send-btn">Enviar Mensagem</button></div>
+
+
+    <section id="contact" class="section dark">
+      <div class="container" data-animate>
+        <h2>Entre em Contato</h2>
+        <p>Vamos conversar sobre o seu projeto</p>
+
+        <div class="contact-grid">
+          <form id="contactForm" onsubmit="handleForm(event)">
+            <label>Nome<input type="text" name="name" required></label>
+            <label>E-mail<input type="email" name="email" required></label>
+            <label>WhatsApp<input type="tel" name="whatsapp" placeholder="(00) 00000-0000"></label>
+            <label>Mensagem<textarea name="message" rows="5" required></textarea></label>
+
+            <div class="form-actions">
+              <button class="btn-primary" type="submit">Enviar Mensagem</button>
+            </div>
+            <p class="small">Observação: Para envio real via Google Apps Script veja o arquivo <code>apps_script.txt</code> e o README.</p>
           </form>
-        </div>
 
-        <aside class="contact-info">
-          <h3>Informações</h3>
-          <p><strong>WhatsApp:</strong> (xx) xxxxx-xxxx</p>
-          <p><strong>E-mail:</strong> contato@madudigital.com</p>
-          <p><strong>Localização:</strong> Rua Fictícia, 123 - São Paulo, SP</p>
-          <div class="tech-lines" aria-hidden="true"></div>
-        </aside>
+          <aside class="contact-info">
+            <div class="card">
+              <h3>Informações de Contato</h3>
+              <p>WhatsApp: (00) 00000-0000</p>
+              <p>E-mail: contato@madudigital.com</p>
+              <p>Localização: São Paulo, SP - Brasil</p>
+            </div>
+
+            <div class="card">
+              <h4>Horário de Atendimento</h4>
+              <p>Seg a Sex: 9h às 18h<br>Sábado: 9h às 13h</p>
+            </div>
+          </aside>
+        </div>
       </div>
     </section>
-
   </main>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-left">
-        <div class="logo-small">Madu Digital</div>
-        <div class="socials">
-          <a href="#" aria-label="Instagram">IG</a>
-          <a href="#" aria-label="LinkedIn">LI</a>
-          <a href="#" aria-label="Behance">BE</a>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="brand small">
+          <img src="assets/img/logo.png" alt="Madu Digital" class="logo small">
+          <span>Madu Digital</span>
         </div>
-      </div>
-      <div class="footer-right">
-        <p>© 2025 Madu Digital – Todos os direitos reservados</p>
+        <div class="social">
+          <a href="#" aria-label="Instagram">Instagram</a>
+          <a href="#" aria-label="LinkedIn">LinkedIn</a>
+          <a href="#" aria-label="WhatsApp">WhatsApp</a>
+        </div>
+        <p class="copyright">© sandbox — Madu Digital — Todos os direitos reservados</p>
       </div>
     </div>
   </footer>
 
-  <script src="/assets/js/main.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
